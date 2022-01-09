@@ -4,7 +4,10 @@ object Main extends App {
     println(currentTime)
 }
 
+// "-Wunused"
+// sbt "scalafixEnable; scalafix RemoveUnused"
 object LitteredWithJunk extends App {
     val x = "Useless!"
-
+    "eh"
+    println("Bop")
 }
