@@ -5,7 +5,11 @@ object LitteredWithJunk extends App {
             val stringInput = input.asInstanceOf[String]
             var dumbFormattedName: String = null
             if (stringInput.trim.forall(_.isLetter))
-                dumbFormattedName = stringInput.trim().toLowerCase().capitalize
+                dumbFormattedName = 
+                    stringInput
+                        .trim()
+                        .toLowerCase()
+                        .capitalize
             else 
                 throw new Exception("Bad input!")
 
