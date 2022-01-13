@@ -14,7 +14,7 @@ object LitteredWithJunk extends App {
 
             println("Hello " + dumbFormattedName)
         } else {
-            throw new Exception("Input is not a String")
+            ()
         }
 
     hackyParsingAndGreeting("  morgan ")
