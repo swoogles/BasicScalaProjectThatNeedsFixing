@@ -1,6 +1,6 @@
 import java.time.Instant
 
-object ZioCandidate extends App {
+object ZioCandidate {
     val currentTime = Instant.now()
     println(currentTime)
 }
