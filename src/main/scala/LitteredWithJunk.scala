@@ -1,14 +1,21 @@
+
 object LitteredWithJunk extends App {
-    def hackyParsingAndGreeting(input: String): Unit = {
-        var dumbVariable = null.asInstanceOf[String]
-        if (input.forall(_.isLetter))
-            dumbVariable = input
-        else 
-            throw new Exception("Bad input!")
+    def hackyParsingAndGreeting(input: Any): Unit =
+        if (input.isInstanceOf[String]) {
+            val stringInput = input.asInstanceOf[String]
+            var dumbFormattedName: String = null
+            if (stringInput.trim.forall(_.isLetter))
+                dumbFormattedName = stringInput.trim().toLowerCase().capitalize
+            else 
+                throw new Exception("Bad input!")
 
-        if (dumbVariable == null)
-            return
+            if (dumbFormattedName == null)
+                return
 
-        println("Hello " + dumbVariable)
-    }
+            println("Hello " + dumbFormattedName)
+        } else {
+            throw new Exception("Input is not a String")
+        }
+
+    hackyParsingAndGreeting("  morgan ")
 }
